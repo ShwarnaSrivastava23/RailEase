@@ -117,3 +117,68 @@ Passenger
 Booking
 ReservationSystem
 RailEaseServer
+        👤 User
+          │
+          ▼
+   🌐 Web Interface
+          │
+          ▼
+     🔎 Search Train
+          │
+          ▼
+     🚆 Select Train
+          │
+          ▼
+   👤 Passenger Details
+          │
+          ▼
+    💺 Seat Allocation
+          │
+          ▼
+    🛏️ Berth Allocation
+          │
+          ▼
+      💳 Payment
+          │
+          ▼
+   🎫 Booking Confirmation
+          │
+       ┌──┴──┐
+       ▼     ▼
+   📄 View  ❌ Cancel
+   Booking   Booking
+
+                         RailEase
+                            │
+             ┌──────────────┴──────────────┐
+             │                             │
+       🌐 Frontend                     ☕ Backend
+             │                             │
+     ┌───────┼───────┐             ┌──────┼─────────┐
+     │       │       │             │      │         │
+    HTML    CSS     JS           Train  Booking  Passenger
+                                      │
+                                      ▼
+                              ReservationSystem
+                                      │
+                                      ▼
+                               RailEaseServer
+
+
+RailEase/
+│
+├── Main.java
+├── Train.java
+├── Passenger.java
+├── Booking.java
+├── ReservationSystem.java
+│
+├── server/
+│   └── RailEaseServer.java
+│
+├── web/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+└── README.md
