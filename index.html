@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>RailEase - Train Reservation System</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🚆 RailEase
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#search">
+            Search Trains
+        </a>
+
+        <a href="#popular">
+            Popular Trains
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            🚆 Smart Train Reservation
+        </div>
+
+        <h1>
+            Your Journey,
+            <span>Made Easier</span>
+        </h1>
+
+        <p>
+            Search trains, check seat availability,
+            and plan your journey with RailEase.
+        </p>
+
+        <button class="hero-button"
+                onclick="scrollToSearch()">
+
+            Search Trains
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH SECTION
+========================= -->
+
+<section class="search-section"
+         id="search">
+
+    <div class="search-card">
+
+        <div class="search-heading">
+
+            <h2>
+                🔎 Search for Trains
+            </h2>
+
+            <p>
+                Find trains based on your route
+                and preferred train type.
+            </p>
+
+        </div>
+
+
+        <div class="search-form">
+
+            <div class="input-group">
+
+                <label for="source">
+                    From
+                </label>
+
+                <input
+                    type="text"
+                    id="source"
+                    placeholder="e.g. Delhi">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="destination">
+                    To
+                </label>
+
+                <input
+                    type="text"
+                    id="destination"
+                    placeholder="e.g. Varanasi">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="trainType">
+                    Train Type
+                </label>
+
+                <select id="trainType">
+
+                    <option value="">
+                        All Types
+                    </option>
+
+                    <option value="Local">
+                        Local
+                    </option>
+
+                    <option value="Passenger">
+                        Passenger
+                    </option>
+
+                    <option value="Express">
+                        Express
+                    </option>
+
+                    <option value="Superfast">
+                        Superfast
+                    </option>
+
+                    <option value="Rajdhani">
+                        Rajdhani
+                    </option>
+
+                    <option value="Shatabdi">
+                        Shatabdi
+                    </option>
+
+                    <option value="Vande Bharat">
+                        Vande Bharat
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button class="search-button"
+                    onclick="searchTrains()">
+
+                🔍 Search Trains
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH RESULTS
+========================= -->
+
+<section class="results-section">
+
+    <div class="results-container">
+
+        <div class="results-heading">
+
+            <h2>
+                Available Trains
+            </h2>
+
+            <p id="resultsMessage">
+                Search for trains to see
+                available options.
+            </p>
+
+        </div>
+
+
+        <div id="trainResults"
+             class="train-results">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING FORM
+========================= -->
+
+<section class="booking-form-section"
+         id="bookingFormSection"
+         style="display: none;">
+
+    <div class="booking-form-card">
+
+        <div class="section-badge">
+            🎫 Passenger Details
+        </div>
+
+        <h2>
+            Complete Your Booking
+        </h2>
+
+        <p class="booking-description">
+            Enter passenger details to reserve
+            your train seat.
+        </p>
+
+
+        <!-- SELECTED TRAIN -->
+
+        <div class="selected-train-box">
+
+            <div>
+
+                <strong>
+                    Selected Train
+                </strong>
+
+                <p id="selectedTrainName">
+                    -
+                </p>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Train Number
+                </strong>
+
+                <p id="selectedTrainNumber">
+                    -
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASSENGER FORM -->
+
+        <div class="passenger-form">
+
+            <div class="input-group">
+
+                <label for="passengerName">
+                    Passenger Name
+                </label>
+
+                <input
+                    type="text"
+                    id="passengerName"
+                    placeholder="Enter passenger name">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="passengerAge">
+                    Age
+                </label>
+
+                <input
+                    type="number"
+                    id="passengerAge"
+                    placeholder="Enter age"
+                    min="1"
+                    max="120">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="passengerGender">
+                    Gender
+                </label>
+
+                <select id="passengerGender">
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="booking-buttons">
+
+            <button class="confirm-booking-button"
+                    onclick="confirmBooking()">
+
+                🎫 Confirm Booking
+
+            </button>
+
+
+            <button class="cancel-booking-button"
+                    onclick="closeBookingForm()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+
+        <!-- BOOKING MESSAGE -->
+
+        <div id="bookingMessage"
+             class="booking-message">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats-section">
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🚆
+            </div>
+
+            <h3>
+                33+
+            </h3>
+
+            <p>
+                Trains
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                💺
+            </div>
+
+            <h3>
+                2000+
+            </h3>
+
+            <p>
+                Seats
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🎫
+            </div>
+
+            <h3>
+                100+
+            </h3>
+
+            <p>
+                Bookings
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🕐
+            </div>
+
+            <h3>
+                24/7
+            </h3>
+
+            <p>
+                Easy Booking
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     POPULAR TRAINS
+========================= -->
+
+<section class="popular-section"
+         id="popular">
+
+    <div class="section-heading">
+
+        <div class="section-badge">
+            ⭐ Popular Routes
+        </div>
+
+        <h2>
+            Popular Trains
+        </h2>
+
+        <p>
+            Explore some of the popular trains
+            available in RailEase.
+        </p>
+
+    </div>
+
+
+    <div class="train-grid">
+
+
+        <!-- TRAIN 116 -->
+
+        <div class="train-card">
+
+            <div class="train-card-top">
+
+                <div class="train-icon">
+                    🚆
+                </div>
+
+                <span class="train-number">
+                    #116
+                </span>
+
+            </div>
+
+            <h3>
+                Magadh Express
+            </h3>
+
+            <p class="route">
+                Delhi
+                <span>→</span>
+                Patna
+            </p>
+
+            <span class="train-badge">
+                Express
+            </span>
+
+            <button onclick="selectTrain(116)">
+
+                Book Now
+
+            </button>
+
+        </div>
+
+
+        <!-- TRAIN 120 -->
+
+        <div class="train-card">
+
+            <div class="train-card-top">
+
+                <div class="train-icon">
+                    🚆
+                </div>
+
+                <span class="train-number">
+                    #120
+                </span>
+
+            </div>
+
+            <h3>
+                Shiv Ganga Superfast
+            </h3>
+
+            <p class="route">
+                Delhi
+                <span>→</span>
+                Varanasi
+            </p>
+
+            <span class="train-badge">
+                Superfast
+            </span>
+
+            <button onclick="selectTrain(120)">
+
+                Book Now
+
+            </button>
+
+        </div>
+
+
+        <!-- TRAIN 130 -->
+
+        <div class="train-card">
+
+            <div class="train-card-top">
+
+                <div class="train-icon">
+                    🚄
+                </div>
+
+                <span class="train-number">
+                    #130
+                </span>
+
+            </div>
+
+            <h3>
+                Vande Bharat
+            </h3>
+
+            <p class="route">
+                Delhi
+                <span>→</span>
+                Varanasi
+            </p>
+
+            <span class="train-badge">
+                Vande Bharat
+            </span>
+
+            <button onclick="selectTrain(130)">
+
+                Book Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BOOKING CTA
+========================= -->
+
+<section class="booking-section"
+         id="about">
+
+    <div class="booking-content">
+
+        <div class="booking-icon">
+            🎫
+        </div>
+
+        <h2>
+            Ready for your journey?
+        </h2>
+
+        <p>
+            Find your train and reserve your
+            seat with RailEase.
+        </p>
+
+        <button onclick="scrollToSearch()">
+
+            Start Booking
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <h3>
+                🚆 RailEase
+            </h3>
+
+            <p>
+                A simple and convenient
+                train reservation system.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#search">
+                Search Trains
+            </a>
+
+            <a href="#popular">
+                Popular Trains
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Technology
+            </h4>
+
+            <p>
+                Java
+            </p>
+
+            <p>
+                HTML & CSS
+            </p>
+
+            <p>
+                JavaScript
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Application
+            </h4>
+
+            <p>
+                Localhost
+            </p>
+
+            <p>
+                Java HTTP Server
+            </p>
+
+            <p>
+                Reservation System
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 RailEase.
+            Train Reservation System.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

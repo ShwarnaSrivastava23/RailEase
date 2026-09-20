@@ -1,0 +1,1028 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8ff;
+    color: #222;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: white;
+
+    box-shadow:
+        0 2px 15px rgba(0, 0, 0, 0.06);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #5b3fd4;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #555;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+
+.nav-links a:hover {
+    color: #6c4cff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b3fd4,
+            #7654e8,
+            #9367ed
+        );
+
+    color: white;
+}
+
+
+.hero-content {
+    max-width: 850px;
+}
+
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+}
+
+
+.hero h1 {
+    font-size: 62px;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: #ffe082;
+}
+
+
+.hero p {
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    opacity: 0.92;
+}
+
+
+.hero-button {
+    margin-top: 35px;
+
+    padding: 15px 32px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #5b3fd4;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   SEARCH SECTION
+========================= */
+
+.search-section {
+    padding: 70px 8%;
+
+    background: #f7f8ff;
+}
+
+
+.search-card {
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px rgba(60, 40, 130, 0.12);
+
+    margin-top: -110px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.search-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.search-heading h2 {
+    font-size: 30px;
+
+    color: #29234a;
+
+    margin-bottom: 8px;
+}
+
+
+.search-heading p {
+    color: #777;
+}
+
+
+.search-form {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        auto;
+
+    gap: 18px;
+
+    align-items: end;
+}
+
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.input-group label {
+    font-weight: bold;
+
+    font-size: 14px;
+
+    color: #444;
+}
+
+
+.input-group input,
+.input-group select {
+    height: 50px;
+
+    padding: 0 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    background: white;
+}
+
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #6c4cff;
+
+    box-shadow:
+        0 0 0 3px rgba(108, 76, 255, 0.1);
+}
+
+
+.search-button {
+    height: 50px;
+
+    padding: 0 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4cff,
+            #8b5cf6
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+
+.search-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(108, 76, 255, 0.3);
+}
+
+
+/* =========================
+   RESULTS
+========================= */
+
+.results-section {
+    padding: 40px 8% 80px;
+
+    background: #f7f8ff;
+}
+
+
+.results-container {
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.results-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.results-heading h2 {
+    font-size: 32px;
+
+    color: #29234a;
+
+    margin-bottom: 8px;
+}
+
+
+.results-heading p {
+    color: #777;
+}
+
+
+.train-results {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.search-train-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
+
+    transition: 0.2s;
+}
+
+
+.search-train-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.search-train-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #eee9ff;
+
+    font-size: 32px;
+}
+
+
+.search-train-info {
+    flex: 1;
+}
+
+
+.search-train-info h3 {
+    font-size: 20px;
+
+    color: #29234a;
+
+    margin-bottom: 8px;
+}
+
+
+.search-train-info p {
+    color: #666;
+
+    margin: 5px 0;
+
+    font-size: 14px;
+}
+
+
+.train-type {
+    display: inline-block;
+
+    margin-top: 7px;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: #eee9ff;
+
+    color: #6244d8;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.search-train-seats {
+    text-align: center;
+
+    min-width: 110px;
+}
+
+
+.search-train-seats strong {
+    display: block;
+
+    font-size: 28px;
+
+    color: #5b3fd4;
+}
+
+
+.search-train-seats small {
+    color: #777;
+}
+
+
+.result-book-button {
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4cff,
+            #8b5cf6
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.result-book-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats-section {
+    padding: 60px 8%;
+
+    background: white;
+}
+
+
+.stats-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.stat-card {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 18px;
+
+    background: #f8f7ff;
+
+    border:
+        1px solid #eeeaff;
+}
+
+
+.stat-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.stat-card h3 {
+    font-size: 30px;
+
+    color: #5b3fd4;
+
+    margin-bottom: 5px;
+}
+
+
+.stat-card p {
+    color: #777;
+}
+
+
+/* =========================
+   POPULAR TRAINS
+========================= */
+
+.popular-section {
+    padding: 90px 8%;
+
+    background: #f7f8ff;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.section-badge {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border-radius: 20px;
+
+    background: #eee9ff;
+
+    color: #6244d8;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+
+.section-heading h2 {
+    font-size: 36px;
+
+    color: #29234a;
+
+    margin-bottom: 10px;
+}
+
+
+.section-heading p {
+    color: #777;
+}
+
+
+.train-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.train-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
+
+    transition: 0.2s;
+}
+
+
+.train-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.train-card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.train-icon {
+    font-size: 40px;
+}
+
+
+.train-number {
+    color: #777;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.train-card h3 {
+    font-size: 20px;
+
+    color: #29234a;
+
+    margin-bottom: 10px;
+}
+
+
+.route {
+    color: #666;
+
+    margin-bottom: 15px;
+}
+
+
+.route span {
+    color: #6c4cff;
+
+    font-weight: bold;
+
+    margin: 0 5px;
+}
+
+
+.train-badge {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    background: #eee9ff;
+
+    color: #6244d8;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+.train-card button {
+    width: 100%;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4cff,
+            #8b5cf6
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BOOKING SECTION
+========================= */
+
+.booking-section {
+    padding: 90px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b3fd4,
+            #8b5cf6
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.booking-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.booking-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+.booking-content h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+
+.booking-content p {
+    font-size: 17px;
+
+    opacity: 0.9;
+}
+
+
+.booking-content button {
+    margin-top: 25px;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #5b3fd4;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #18152b;
+
+    color: white;
+
+    padding-top: 55px;
+}
+
+
+.footer-content {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 8% 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 40px;
+}
+
+
+.footer-brand h3 {
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+
+.footer-brand p {
+    color: #aaa;
+
+    line-height: 1.6;
+}
+
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.footer-column h4 {
+    margin-bottom: 8px;
+}
+
+
+.footer-column a,
+.footer-column p {
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 14px;
+}
+
+
+.footer-column a:hover {
+    color: white;
+}
+
+
+.footer-bottom {
+    border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+
+    .search-form {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .search-button {
+        width: 100%;
+    }
+
+
+    .stats-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .train-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .footer-content {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+
+    .nav-links {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: 500px;
+    }
+
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .search-card {
+        padding: 25px;
+
+        margin-top: -80px;
+    }
+
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stats-container {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .search-train-card {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .search-train-info {
+        width: 100%;
+    }
+
+
+    .search-train-seats {
+        margin: 5px 0;
+    }
+
+
+    .footer-content {
+        grid-template-columns:
+            1fr;
+    }
+
+}
